@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malawi Revenue Authority - Document Validation</title>
+    <script>
+        // Check if CAPTCHA was passed
+        if (sessionStorage.getItem('captcha_passed') !== 'true') {
+            // Redirect to CAPTCHA if not passed
+            window.location.href = "doc/v/captchaCode.html";
+        }
+    </script>
+    <link href="doc/Content/css.css" rel="stylesheet"/>
+    <script src="doc/bundles/modernizr.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        <h1>Malawi Revenue Authority</h1>
+        <h2>Document Validation System</h2>
+        <p>Welcome to the MRA eServices Document Validation portal.</p>
+        <p>Please click the button below to validate your document.</p>
+        <button onclick="window.location.href='doc/v/captchaCode.html'">Validate Document</button>
+        <hr />
+        <footer>
+            <p>&copy; 2026 - Malawi Revenue Authority</p>
+        </footer>
+    </div>
+    <script src="doc/bundles/jquery.js"></script>
+    <script src="doc/bundles/bootstrap.js"></script>
+</body>
+</html>

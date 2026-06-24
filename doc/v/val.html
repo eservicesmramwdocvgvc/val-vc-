@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validateDocument | Document Validation</title>
+    <script>
+        // Check if CAPTCHA was passed
+        if (sessionStorage.getItem('captcha_passed') !== 'true') {
+            // Redirect to CAPTCHA if not passed, including the current URL as a return destination
+            const currentUrl = window.location.href;
+            window.location.href = "captchaCode.html?return=" + encodeURIComponent(currentUrl);
+        }
+    </script>
+    <link href="../Content/css.css" rel="stylesheet"/>
+    <script src="../bundles/modernizr.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        
+
+
+<h2>Document with Validation Code <span id="val-code"></span> <b><u>must have</u></b> the below details</h2>
+
+<table class="table" id="val-table">
+    <thead>
+        <tr>
+            <th width="30%">Field</th>
+            <th width="90%">Value</th>
+        </tr>
+    </thead>
+    <tbody id="val-body">
+        <!-- Rows will be dynamically generated here -->
+    </tbody>
+</table>
+<a href="gvc.html" class="btn btn-success btn-lg">Back</a>
+
+<script>
+     // Get the validation code from the URL
+     const urlParams = new URLSearchParams(window.location.search);
+    let vc = urlParams.get('vc');
+    if (vc) vc = vc.trim();
+
+    if (!vc) {
+        window.location.href = "gvc.html";
+    } else {
+        // Fetch data from both databases
+        Promise.all([
+            fetch('../../release_orders.json').then(r => r.json()).catch(() => ({})),
+            fetch('../../declarations.json').then(r => r.json()).catch(() => ({}))
+        ]).then(([releaseOrders, declarations]) => {
+            // Merge the results
+            const docs = { ...releaseOrders, ...declarations };
+            const doc = docs[vc];
+
+            if (doc) {
+                document.getElementById('val-code').textContent = doc.code;
+                const tbody = document.getElementById('val-body');
+
+                // Define the fields and their display names
+                // We use an array of objects to maintain order and map keys
+                const fieldMapping = [
+                    { label: "Document Title", keys: ["title", "document title"] },
+                    { label: "TPIN", keys: ["tpin"] },
+                    { label: "Importer Name", keys: ["importer", "importer/consignee"] },
+                    { label: "Clearance Office", keys: ["office", "clearance office"] },
+                    { label: "Registration Reference", keys: ["reference", "registration reference"] },
+                    { label: "Declarant Code", keys: ["declarant", "declarant code"] },
+                    { label: "Declarant Name", keys: ["declarant name", "declarant_name"] },
+                    { label: "Total Items", keys: ["items", "total items"] },
+                    { label: "Total Pieces", keys: ["total pieces"] },
+                    { label: "Total Packages", keys: ["packages", "total packages"] },
+                    { label: "Consignment Value", keys: ["value", "consignment value"] },
+                    { label: "Total Taxes", keys: ["taxes"] }
+                ];
+
+                fieldMapping.forEach(field => {
+                    // Find if any of the keys exist in the doc object and have a non-empty value
+                    let value = "";
+                    for (const key of field.keys) {
+                        if (doc[key] && doc[key].toString().trim() !== "") {
+                            value = doc[key];
+                            break;
+                        }
+                    }
+
+                    // Only add the row if we found a value
+                    if (value !== "") {
+                        const row = document.createElement('tr');
+                        const fieldCell = document.createElement('td');
+                        fieldCell.textContent = field.label;
+                        
+                        const valueCell = document.createElement('td');
+                        const span = document.createElement('span');
+                        span.style.whiteSpace = 'pre-line';
+                        span.textContent = value;
+                        
+                        valueCell.appendChild(span);
+                        row.appendChild(fieldCell);
+                        row.appendChild(valueCell);
+                        tbody.appendChild(row);
+                    }
+                });
+
+            } else {
+                // Code not found in either database
+                window.location.href = "gvc.html?error=1";
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching document data:', error);
+            window.location.href = "gvc.html?error=1";
+        });
+    }
+</script>
+        <hr />
+        <footer>
+            <p>&copy; 2026 - Malawi Revenue Authority</p>
+        </footer>
+    </div>
+
+    <script src="../bundles/jquery.js"></script>
+
+    <script src="../bundles/bootstrap.js"></script>
+
+    
+</body>
+</html>

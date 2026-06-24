@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Code | Document Validation</title>
+    <script>
+        // Check if CAPTCHA was passed
+        if (sessionStorage.getItem('captcha_passed') !== 'true') {
+            // Redirect to CAPTCHA if not passed, including the current URL as a return destination
+            const currentUrl = window.location.href;
+            window.location.href = "captchaCode.html?return=" + encodeURIComponent(currentUrl);
+        }
+    </script>
+    <link href="../Content/css.css" rel="stylesheet"/>
+    <script src="../bundles/modernizr.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        <h2>Enter Validation Code</h2>
+        <div id="error_msg" style="display:none; color: red; margin-bottom: 10px;">
+            Invalid validation code. Please check and try again.
+        </div>
+        <script>
+            if (window.location.search.indexOf('error=1') > -1) {
+                document.getElementById('error_msg').style.display = 'block';
+            }
+        </script>
+        <form id="gvc-form" onsubmit="validateCode(event)">
+            Validation Code : <input type="text" id="vc" name="vc" required/><p>
+            </p><i>This is a 14 digit number at the bottom of the document.</i><br />
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+            function validateCode(event) {
+                event.preventDefault();
+                var code = document.getElementById('vc').value.trim();
+                
+                // Fetch data from both databases
+                Promise.all([
+                    fetch('../../release_orders.json').then(r => r.json()).catch(() => ({})),
+                    fetch('../../declarations.json').then(r => r.json()).catch(() => ({}))
+                ]).then(([releaseOrders, declarations]) => {
+                    const docs = { ...releaseOrders, ...declarations };
+                    if (docs[code]) {
+                        // Valid code found, redirect to val.html with the code
+                        window.location.href = "val.html?vc=" + encodeURIComponent(code);
+                    } else {
+                        // Invalid code
+                        document.getElementById('error_msg').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching documents:', error);
+                    document.getElementById('error_msg').style.display = 'block';
+                });
+            }
+        </script>
+        <hr />
+        <footer>
+            <p>&copy; 2026 - Malawi Revenue Authority</p>
+        </footer>
+    </div>
+    <script src="../bundles/jquery.js"></script>
+    <script src="../bundles/bootstrap.js"></script>
+</body>
+</html>
