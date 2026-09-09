@@ -26,7 +26,7 @@
     <thead>
         <tr>
             <th width="30%">Field</th>
-            <th width="90%">Value</th>
+            <th width="70%">Value</th>
         </tr>
     </thead>
     <tbody id="val-body">
@@ -38,23 +38,36 @@
 <script>
      // Get the validation code from the URL
      const urlParams = new URLSearchParams(window.location.search);
-    let vc = urlParams.get('vc');
-    if (vc) vc = vc.trim();
+    let rawVc = urlParams.get('vc');
+    let vc = rawVc ? rawVc.trim().replace(/\D/g, '') : '';
 
     if (!vc) {
         window.location.href = "gvc.html";
     } else {
         // Fetch data from both databases
+        const cacheBust = '?t=' + Date.now();
         Promise.all([
-            fetch('../../release_orders.json').then(r => r.json()).catch(() => ({})),
-            fetch('../../declarations.json').then(r => r.json()).catch(() => ({}))
+            fetch('../../release_orders.json' + cacheBust, { cache: 'no-store' }).then(r => r.json()).catch(() => ({})),
+            fetch('../../declarations.json' + cacheBust, { cache: 'no-store' }).then(r => r.json()).catch(() => ({}))
         ]).then(([releaseOrders, declarations]) => {
             // Merge the results
             const docs = { ...releaseOrders, ...declarations };
-            const doc = docs[vc];
+
+            // Look up exact match first; if not found, try case-insensitive / numeric match on all keys
+            let doc = docs[vc];
+            if (!doc) {
+                for (const k of Object.keys(docs)) {
+                    const nk = k.replace(/\D/g, '');
+                    if (nk === vc) {
+                        doc = docs[k];
+                        vc = k;
+                        break;
+                    }
+                }
+            }
 
             if (doc) {
-                document.getElementById('val-code').textContent = doc.code;
+                document.getElementById('val-code').textContent = doc.code || vc;
                 const tbody = document.getElementById('val-body');
 
                 // Define the fields and their display names

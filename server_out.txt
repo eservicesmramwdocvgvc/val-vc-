@@ -1,0 +1,42 @@
+Server running at http://localhost:8898/
+Press Ctrl+C to stop
+[GET] /doc/v/gvc.html
+  200 OK
+[GET] /doc/Content/css.css
+  200 OK
+[GET] /doc/bundles/modernizr.js
+[GET] /doc/bundles/jquery.js
+[GET] /doc/bundles/bootstrap.js
+  200 OK
+  200 OK
+  200 OK
+[GET] /doc/v/captchaCode.html?return=http%3A%2F%2Flocalhost%3A8898%2Fdoc%2Fv%2Fgvc.html
+  404 Not Found
+[GET] /@vite/client
+  404 Not Found
+[GET] /doc/v/gvc.html
+  200 OK
+[GET] /doc/Content/css.css
+[GET] /doc/bundles/modernizr.js
+[GET] /doc/bundles/jquery.js
+[GET] /doc/bundles/bootstrap.js
+[GET] /doc/v/captchaCode.html?return=http%3A%2F%2Flocalhost%3A8898%2Fdoc%2Fv%2Fgvc.html
+  404 Not Found
+  200 OK
+  200 OK
+  200 OK
+  200 OK
+[GET] /@vite/client
+  404 Not Found
+[GET] /doc/v/captchaCode.html
+  200 OK
+[GET] /doc/v/captchaCode.html
+  200 OK
+[GET] /doc/v/captchaCode.html
+  200 OK
+[GET] /doc/v/captchaCode.html
+  200 OK
+[GET] /doc/v/captchaCode.html
+  200 OK
+[GET] /doc/v/captchaCode.html
+  200 OK

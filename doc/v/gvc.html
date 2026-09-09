@@ -33,17 +33,49 @@
         </form>
 
         <script>
+            var draftKey = 'validation_code_draft';
+            var lastValidCodeKey = 'validation_code_last_valid';
+
+            function saveDraftCode(value) {
+                localStorage.setItem(draftKey, value);
+            }
+
             function validateCode(event) {
                 event.preventDefault();
-                var code = document.getElementById('vc').value.trim();
+                var input = document.getElementById('vc');
+                var rawCode = input.value.trim();
+                var code = rawCode.replace(/\D/g, '');
+
+                if (code.length === 0) {
+                    document.getElementById('error_msg').style.display = 'block';
+                    document.getElementById('error_msg').textContent = 'Please enter a validation code.';
+                    return;
+                }
+
+                if (code.length !== 14) {
+                    var proceedAnyway = confirm(
+                        'Validation codes are typically exactly 14 digits. You entered ' + code.length + ' digits.\n\n' +
+                        'Proceed anyway to look up this code?'
+                    );
+                    if (!proceedAnyway) {
+                        return;
+                    }
+                }
+
+                input.value = code;
+                saveDraftCode(code);
+                document.getElementById('error_msg').style.display = 'none';
+                document.getElementById('error_msg').textContent = 'Invalid validation code. Please check and try again.';
                 
                 // Fetch data from both databases
+                const cacheBust = '?t=' + Date.now();
                 Promise.all([
-                    fetch('../../release_orders.json').then(r => r.json()).catch(() => ({})),
-                    fetch('../../declarations.json').then(r => r.json()).catch(() => ({}))
+                    fetch('../../release_orders.json' + cacheBust, { cache: 'no-store' }).then(r => r.json()).catch(() => ({})),
+                    fetch('../../declarations.json' + cacheBust, { cache: 'no-store' }).then(r => r.json()).catch(() => ({}))
                 ]).then(([releaseOrders, declarations]) => {
                     const docs = { ...releaseOrders, ...declarations };
                     if (docs[code]) {
+                        localStorage.setItem(lastValidCodeKey, code);
                         // Valid code found, redirect to val.html with the code
                         window.location.href = "val.html?vc=" + encodeURIComponent(code);
                     } else {
@@ -56,6 +88,19 @@
                     document.getElementById('error_msg').style.display = 'block';
                 });
             }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var input = document.getElementById('vc');
+                var savedDraft = localStorage.getItem(draftKey);
+
+                if (savedDraft) {
+                    input.value = savedDraft;
+                }
+
+                input.addEventListener('input', function () {
+                    saveDraftCode(input.value);
+                });
+            });
         </script>
         <hr />
         <footer>
