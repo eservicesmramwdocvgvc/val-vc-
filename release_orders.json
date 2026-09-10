@@ -2440,5 +2440,16 @@
         "declarant": "CA25941",
         "items": "1",
         "taxes": "3307158.98"
+    },
+    "60114922986777": {
+        "code": "60114922986777",
+        "title": "Release Order",
+        "tpin": "71057981",
+        "importer": "MBEMBATI CLUB\r\nP.O BOX 41, KAPOLO\r\nKARONGA MALAWI",
+        "office": "SONGWE BORDER",
+        "reference": "C 41932 of 04/03/2026",
+        "declarant": "CA26941",
+        "items": "1",
+        "taxes": "1163425.00"
     }
 }

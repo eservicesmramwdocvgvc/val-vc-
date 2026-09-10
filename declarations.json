@@ -3092,5 +3092,19 @@
         "total packages": "553",
         "consignment value": "USD 7000.36",
         "taxes": "3357158.98"
+    },
+    "70950760889016": {
+        "code": "70950760889016",
+        "document title": "Customs and Excise\r\nDeclaration (Form 12)",
+        "tpin": "71057981",
+        "importer/consignee": "MBEMBATI CLUB\r\nP.O BOX 41, KAPOLO\r\nKARONGA MALAWI",
+        "clearance office": "SONGWE BORDER",
+        "registration reference": "C 41932 of 2026/03/04",
+        "declarant code": "CA26941",
+        "declarant name": "EKAS FREIGHT SERVICES\r\nP.O BOX 40344\r\nLILONGWE 4",
+        "total items": "1",
+        "total packages": "1",
+        "consignment value": "USD 14300.00",
+        "taxes": "1213425.00"
     }
 }
