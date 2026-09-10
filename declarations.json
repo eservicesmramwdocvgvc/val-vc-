@@ -2732,7 +2732,7 @@
     "70707390333092": {
         "code": "70707390333092",
         "document title": "Customs and Excise\r\nDeclaration (Form 12)",
-        "tpin": "72986458",
+        "tpin": "72986347",
         "importer/consignee": "MKANADOTHI CLUB - GRIFFIN KUMWENDA\r\nP.O BOX 48 RUMPHI\r\nMALAWI",
         "clearance office": "SONGWE BORDER",
         "registration reference": "C 42463 of 2025/09/13",
@@ -3064,5 +3064,19 @@
         "total packages": "1",
         "consignment value": "USD 1300.00",
         "taxes": "3131441.60"
+    },
+    "70989248017395": {
+        "code": "70989248017395",
+        "document title": "Customs and Excise\r\nDeclaration (Form 12)",
+        "tpin": "71753574",
+        "importer/consignee": "KWALE CLUB\r\nP.O BOX 41 PHWAMPHWA\r\nRUMPHI MALAWI",
+        "clearance office": "SONGWE BORDER",
+        "registration reference": "C 64032 of 2025/02/07",
+        "declarant code": "CA87245",
+        "declarant name": "PRESCORT FREIGHT & LOGISTICS\r\nP.O BOX 133\r\nLUMBADZI",
+        "total items": "1",
+        "total packages": "1",
+        "consignment value": "USD 1100.00",
+        "taxes": "1404043.31"
     }
 }

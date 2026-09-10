@@ -709,7 +709,7 @@
         "tpin": "409627476",
         "importer": "Yawufu Club\r\nP.O Box 19, Bwengu\r\nMalawi",
         "office": "SONGWE BORDER",
-        "reference": "C 4039 of 16/10/2025",
+        "reference": "C 4036 of 16/10/2025",
         "declarant": "CA25795",
         "items": "4",
         "taxes": "10569973.19"
@@ -849,18 +849,18 @@
     "60374330814023": {
         "code": "60374330814023",
         "title": "Release Order",
-        "tpin": "70981280",
+        "tpin": "70781280",
         "importer": "CHISANGA CLUB\r\nC/O P.O BOX 65 ULIWA\r\nCHILUMBA, KARONGA",
         "office": "SONGWE BORDER",
         "reference": "C 39498 of 07/11/2025",
-        "declarant": "CA25392",
+        "declarant": "CA25393",
         "items": "1",
         "taxes": "250917.60"
     },
     "60875895764982": {
         "code": "60875895764982",
         "title": "Release Order",
-        "tpin": "70713003",
+        "tpin": "70781280",
         "importer": "ALISON MATUTA\r\nFIRST CAPITAL BANK\r\nP/BAG 122 BLANTYRE\r\nMALAWI",
         "office": "SONGWE BORDER",
         "reference": "C 39543 of 23/09/2025",
@@ -970,7 +970,7 @@
     "60385440925034": {
         "code": "60385440925034",
         "title": "Release Order",
-        "tpin": "70719433",
+        "tpin": "70781280",
         "importer": "KASIMBA BOLERO JTI CLUB\r\nZUNGUZUNGU, BOLERO\r\nP.O BOX 001\r\nRUMPHI MALAWI",
         "office": "SONGWE BORDER",
         "reference": "C 39499 of 07/11/2025",
@@ -2205,7 +2205,7 @@
         "tpin": "71804634",
         "importer": "THUMBI CLUB\r\nP.O BOX 19,\r\nBWENGU MALAWI",
         "office": "SONGWE BORDER",
-        "reference": "C 485014 of 24/12/2025",
+        "reference": "C 85014 of 24/12/2025",
         "declarant": "CA37962",
         "items": "1",
         "taxes": "3059933.23"
@@ -2418,5 +2418,16 @@
         "declarant": "CA25331",
         "items": "1",
         "taxes": "3101441.60"
+    },
+    "60929738281054": {
+        "code": "60929738281054",
+        "title": "Release Order",
+        "tpin": "71753574",
+        "importer": "KWALE CLUB\r\nP.O BOX 41\r\nPHWAMPHWA,RUMPHI\r\nMALAWI",
+        "office": "SONGWE BORDER",
+        "reference": "C 64032 of 07/02/2026",
+        "declarant": "CA87245",
+        "items": "1",
+        "taxes": "1374043.31"
     }
 }
