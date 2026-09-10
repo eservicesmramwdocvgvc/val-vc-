@@ -2429,5 +2429,16 @@
         "declarant": "CA87245",
         "items": "1",
         "taxes": "1374043.31"
+    },
+    "60997745326981": {
+        "code": "60997745326981",
+        "title": "Release Order",
+        "tpin": "70986737",
+        "importer": "MKONDO NYASULU - KHUYU ESTATE\r\nP.O BOX 43 RUMPHI\r\nMALAWI",
+        "office": "SONGWE BORDER",
+        "reference": "C 42746 of 23/02/2025",
+        "declarant": "CA25941",
+        "items": "1",
+        "taxes": "3307158.98"
     }
 }

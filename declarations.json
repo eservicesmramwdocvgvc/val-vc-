@@ -3078,5 +3078,19 @@
         "total packages": "1",
         "consignment value": "USD 1100.00",
         "taxes": "1404043.31"
+    },
+    "70995556176890": {
+        "code": "70995556176890",
+        "document title": "Customs and Excise\r\nDeclaration (Form 12)",
+        "tpin": "70986737",
+        "importer/consignee": "MKONDO NYASULU - KHUYU ESTATE\r\nP.O BOX 43 RUMPHI\r\nMALAWI",
+        "clearance office": "SONGWE BORDER",
+        "registration reference": "C 42746 of 2025/02/23",
+        "declarant code": "CA25941",
+        "declarant name": "A & F FREIGHT\r\nP O BOX 379\r\nMZUZU",
+        "total items": "1",
+        "total packages": "553",
+        "consignment value": "USD 7000.36",
+        "taxes": "3357158.98"
     }
 }
