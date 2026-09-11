@@ -2451,5 +2451,16 @@
         "declarant": "CA26941",
         "items": "1",
         "taxes": "1163425.00"
+    },
+    "60909067548004": {
+        "code": "60909067548004",
+        "title": "Release Order",
+        "tpin": "71933737",
+        "importer": "KUMTIWIRI CLUB\r\nP.O BOX 124 MPHEREMBE MZIMBA\r\nMALAWI",
+        "office": "SONGWE BORDER",
+        "reference": "C 43756 of 27/10/2025",
+        "declarant": "CA25852",
+        "items": "1",
+        "taxes": "1655200.78"
     }
 }
