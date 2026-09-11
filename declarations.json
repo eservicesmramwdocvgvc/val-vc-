@@ -3118,7 +3118,21 @@
         "declarant name": "A & F FREIGHT\r\nP O BOX 379\r\nMZUZU",
         "total items": "1",
         "total packages": "1",
-        "consignment value": "USD 3632.00",
+        "consignment value": "USD 3439.00",
         "taxes": "1705200.78"
+    },
+    "70996778907901": {
+        "code": "70996778907901",
+        "document title": "Customs and Excise\r\nDeclaration (Form 12)",
+        "tpin": "71933737",
+        "importer/consignee": "KUMTIWIRI CLUB\r\nP.O BOX 124 MPHEREMBE MZIMBA \r\nMALAWI",
+        "clearance office": "SONGWE BORDER",
+        "registration reference": "C 43746 of 2025/11/03",
+        "declarant code": "CA25952",
+        "declarant name": "A & F FREIGHT\r\nP O BOX 379\r\nMZUZU",
+        "total items": "1",
+        "total packages": "1",
+        "consignment value": "USD 3632.00",
+        "taxes": "1794724.99"
     }
 }
