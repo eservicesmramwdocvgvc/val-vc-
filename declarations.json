@@ -3125,7 +3125,7 @@
         "code": "70996778907901",
         "document title": "Customs and Excise\r\nDeclaration (Form 12)",
         "tpin": "71933737",
-        "importer/consignee": "KUMTIWIRI CLUB\r\nP.O BOX 124 MPHEREMBE MZIMBA \r\nMALAWI",
+        "importer/consignee": "KUMTIWIRI CLUB\r\nP.O BOX 124 MPHEREMBE MZIMBA\r\nMALAWI",
         "clearance office": "SONGWE BORDER",
         "registration reference": "C 43746 of 2025/11/03",
         "declarant code": "CA25952",
@@ -3134,5 +3134,19 @@
         "total packages": "1",
         "consignment value": "USD 3632.00",
         "taxes": "1794724.99"
+    },
+    "70923690556092": {
+        "code": "70923690556092",
+        "document title": "Customs and Excise\r\nDeclaration (Form 12)",
+        "tpin": "74652201",
+        "importer/consignee": "WANANGWAWITHU CLUB\r\nP.O BOX 19 RUMPHI\r\nMALAWI",
+        "clearance office": "SONGWE BORDER",
+        "registration reference": "C 45790 of 2025/12/09",
+        "declarant code": "CA25129",
+        "declarant name": "MAMO FREIGHT\r\nP O BOX 3357\r\nBLANTYRE",
+        "total items": "1",
+        "total packages": "1",
+        "consignment value": "USD 4700.00",
+        "taxes": "5655573.10"
     }
 }

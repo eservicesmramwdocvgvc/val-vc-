@@ -2473,5 +2473,16 @@
         "declarant": "CA25952",
         "items": "1",
         "taxes": "1744724.99"
+    },
+    "60970825935479": {
+        "code": "60970825935479",
+        "title": "Release Order",
+        "tpin": "74652201",
+        "importer": "WANANGWAWITHU CLUB\r\nP.O BOX 19 RUMPHI\r\nMALAWI",
+        "office": "SONGWE BORDER",
+        "reference": "C 45790 of 09/12/2025",
+        "declarant": "CA25129",
+        "items": "1",
+        "taxes": "5625573.10"
     }
 }
