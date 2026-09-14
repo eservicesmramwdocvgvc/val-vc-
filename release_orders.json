@@ -2506,5 +2506,16 @@
         "declarant": "CA25235",
         "items": "1",
         "taxes": "5249434.82"
+    },
+    "60929738431597": {
+        "code": "60929738431597",
+        "title": "Release Order",
+        "tpin": "71753504",
+        "importer": "FUMBANI CLUB\r\nP.O BOX 231\r\nEKWENDENI\r\nMALAWI",
+        "office": "SONGWE BORDER",
+        "reference": "C 67243 of 10/12/2025",
+        "declarant": "CA25262",
+        "items": "1",
+        "taxes": "3277715.25"
     }
 }

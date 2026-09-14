@@ -3176,5 +3176,19 @@
         "total packages": "1",
         "consignment value": "USD 4380.00",
         "taxes": "5279434.82"
+    },
+    "70989246939985": {
+        "code": "70989246939985",
+        "document title": "Customs and Excise\r\nDeclaration (Form 12)",
+        "tpin": "71753504",
+        "importer/consignee": "FUMBANI CLUB\r\nP.O BOX 231 EKWENDENI\r\nMALAWI",
+        "clearance office": "SONGWE BORDER",
+        "registration reference": "C 67243 of 2025/12/10",
+        "declarant code": "CA25262",
+        "declarant name": "PRESCORT FREIGHT & LOGISTICS\r\nP.O BOX 133\r\nLUMBADZI",
+        "total items": "1",
+        "total packages": "1",
+        "consignment value": "USD 2711.00",
+        "taxes": "3307715.25"
     }
 }
